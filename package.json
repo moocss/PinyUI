@@ -1,0 +1,22 @@
+{
+  "name": "PinyUI",
+  "description": "PinyUI doc builder",
+  "version": "0.0.1",
+  "private": false,
+  "author": "moocss",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "connect-flash": "*",
+    "underscore": "*",
+    "view-helpers": "*",
+    "jade": "*",
+    "stylus": "*",
+    "nib": "*"
+  },
+  "engines": {
+    "node": ">= 0.8.15"
+  }
+}

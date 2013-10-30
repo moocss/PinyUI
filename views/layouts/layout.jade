@@ -1,0 +1,47 @@
+mixin style(sheets)
+    each sheet in sheets
+        link(rel='stylesheet', href=sheet)
+mixin script(scripts)
+    each src in scripts
+        script(src=src)
+mixin nav(nav_items)
+    each item in nav_items
+        - klass = page_name === item.name ? 'nav-item active' : 'nav-item'
+        li(class= klass)
+            a(href= item.name)
+                = item.title
+!!! 5
+//if lt IE 7
+    html.ie6.oldie(lang='zh-CN')
+//if IE 7
+    html.ie7.oldie(lang='zh-CN')
+//if IE 8
+    html.ie8.oldie(lang='zh-CN')
+//if (gte IE 9)|!(IE)
+html(lang='zh-CN')
+    //[endif]
+    include ../includes/header
+    body(role='document')
+        header#header
+            div.container
+                hgroup.hero
+                    h1
+                        | PinyUI
+                    h2
+                        | 快速的前端解决方案。
+                block nav
+                - nav_items = [{ title: '首页', name: '/' }]
+                - nav_items.push({ title: '设计模式库', name: 'dpl' })
+                - nav_items.push({ title: '前端规范', name: 'guidelines' })
+                - nav_items.push({ title: '知识库', name: 'wiki' })
+                nav#top-nav(role='navigation')
+                    ul.main-nav
+                        +nav(nav_items)
+        div.container
+            main#content(role="main")
+                block content
+            aside#sidebar(role="complementary")
+        include ../includes/footer
+        block scripts
+        - scripts = ['/assets/js/jquery-1.9.1.min.js', '/assets/js/pinyui.js', '/assets/js/prettify.js']
+        //mixin script(scripts)
