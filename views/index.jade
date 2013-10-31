@@ -2,12 +2,63 @@ extends layouts/default
 block nav
     - page_name = '/'
 block content
-        #intro
-            | 首页
-        #promo
+    .masthead
+        .container
             h1
-                | 大标题
-            h2
-                | 子标题
-            p   描述。。。。。。。。。
-
+                | Piny UI
+            p.motto
+                | 一个轻量级、模块化的前端框架,为开发者提供快速和简单的前端解决方案。
+            p.download
+               a.btn(href="")
+                    | 下载源码
+            ul.masthead-nav
+                li
+                    a(href="")
+                        | 开始了解
+                li
+                    a(href="")
+                        | Examples
+                li
+                    | Version 1.0.3
+    .features
+        .container
+            h1.heading-large
+                |为什么要使用PinyUI!
+            p.text-large
+                PinyUI gives you a comprehensive collection of HTML, CSS, and JS components
+                which is simple to use, easy to customize and extendable.
+            div.gird.group
+                div.col-1-4
+                    div.box
+                        img
+                        h2
+                            | Stylus
+                        p
+                            |描述...
+                div.col-1-4
+                    div.box
+                        img
+                        h2
+                            | Components
+                        p
+                            |描述...
+                div.col-1-4
+                    div.box
+                        img
+                        h2
+                            | Modles
+                        p
+                            |描述...
+                div.col-1-4
+                    div.box
+                        img
+                        h2
+                            | Responsive
+                        p
+                            |描述...
+    .what-people-say
+        .container
+            | 来自用户的评价
+    .involved
+        .container
+            | PinyUI is hosted on GitHub and open for everyone to contribute.Please give us some feedback and join the development!
