@@ -22,8 +22,8 @@ html(lang='zh-CN')
     //[endif]
     include ../includes/header
     body(role='document')
-        header#header
-            div.container
+        header#header(role="banner")
+            .container
                 a.brand(href="/")
                     |PinyUI
                 block nav
@@ -34,9 +34,8 @@ html(lang='zh-CN')
                 nav#menu(role='navigation')
                     ul.nav.group
                         +nav(nav_items)
-        main#content(role="main")
+        main#content.group(role="main")
             block content
-            aside#sidebar(role="complementary")
         include ../includes/footer
         block scripts
         - scripts = ['/assets/js/jquery-1.9.1.min.js', '/assets/js/pinyui.js', '/assets/js/prettify.js']
